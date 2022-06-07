@@ -1,0 +1,104 @@
+{% extends 'base.html' %}
+{% block content %}
+  <STYle>
+    #map {
+  height: 400px;
+  /* The height is 400 pixels */
+  width: 50%;
+  /* The width is the width of the web page */
+}
+  </STYle>
+
+
+    <!-- END nav -->
+    
+    <section class="hero-wrap hero-wrap-2" style="background-image: url('images/FON.jpg');">
+      <!-- <div class="overlay"></div>
+      <div class="container">
+        <div class="row no-gutters slider-text align-items-center justify-content-center">
+          <div class="col-md-9 ftco-animate text-center">
+            <h1 class="mb-2 bread">Contact Us</h1>
+            <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home <i class="ion-ios-arrow-forward"></i></a></span> <span>Contact <i class="ion-ios-arrow-forward"></i></span></p>
+          </div>
+        </div>
+      </div> -->
+
+      <div id="map" ></div>
+      <div id="maps" style="position: absolute; top:200px; left: 500px;"    ></div>
+      
+    </section>
+    <script>
+      // Initialize and add the map
+function initMap() {
+  // The location of Uluru
+  const uluru = { lat: , lng: ,}; 
+  // The map, centered at Uluru
+  const map = new google.maps.Map(document.getElementById("map"), {
+    zoom: 4,
+    center: uluru,
+  });
+  // The marker, positioned at Uluru
+  const marker = new google.maps.Marker({
+    position: uluru,
+    map: map,
+  });
+}
+    </script>
+        <script>
+          // Initialize and add the map
+    function initMap() {
+      // The location of Uluru
+      const uluru = { lat: , lng: ,}; 
+      // The map, centered at Uluru
+      const map = new google.maps.Map(document.getElementById("maps"), {
+        zoom: 4,
+        center: uluru,
+      });
+      // The marker, positioned at Uluru
+      const marker = new google.maps.Marker({
+        position: uluru,
+        map: map,
+      });
+    }
+        </script>
+
+    <section class="ftco-section contact-section">
+      <div class="container">
+        <div class="row d-flex mb-5 contact-info">
+          <div class="col-md-3 d-flex">
+          	<div class="bg-light align-self-stretch box p-4 text-center">
+          		<h3 class="mb-4">Address</h3>
+	            <p>Buxoro viloyati  G'ijduvon tumani </p>
+	          </div>
+          </div>
+          <div class="col-md-3 d-flex">
+          	<div class="bg-light align-self-stretch box p-4 text-center">
+          		<h3 class="mb-4">Contact Number</h3>
+	            <p><a href="#">+998-12-23-3445</a></p>
+	          </div>
+          </div>
+          <div class="col-md-3 d-flex">
+          	<div class="bg-light align-self-stretch box p-4 text-center">
+          		<h3 class="mb-4">Email Address</h3>
+	            <p><a href="#">test@mail.ru</a></p>
+	          </div>
+          </div>
+          <div class="col-md-3 d-flex">
+          	<div class="bg-light align-self-stretch box p-4 text-center">
+          		<h3 class="mb-4">messenger</h3>
+	            <p><a href="https://t.me/grandbanner11">Telegram</a></p>
+	          </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    
+    
+  
+
+  <!-- loader -->
+  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
+{% endblock %}

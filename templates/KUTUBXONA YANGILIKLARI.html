@@ -1,0 +1,110 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+    <!-- <section class="hero-wrap hero-wrap-2" style="background-image: url({% static 'images/FON2.jpg'%});">
+      
+        <div class="container">
+            <div class="row no-gutters slider-text align-items-center justify-content-center">
+                <div class="col-md-9 ftco-animate text-center">
+                    <h1 class="mb-2 bread">NEW BLOG</h1>
+                    <p class="breadcrumbs"><span class="mr-2"><a href="{% url 'index' %}">Home <i
+                            class="ion-ios-arrow-forward"></i></a></span> <span>Blog <i
+                            class="ion-ios-arrow-forward"></i></span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="ftco-section bg-light">
+        <div class="container">
+            <div class="row">
+                {% for post in posts %}
+                    <div class="col-md-6 col-lg-4 ftco-animate">
+                        <div class="blog-entry">
+                            <a href="{% url 'index' %}" class=" d-flex align-items-end" style="width: 30%; height: 30%;"
+                               style="background-image: url({{ post.photo.url }});">
+                                <div class="meta-date text-center p-2">
+                                    <span class="day">{{ post.created_at|date:"d" }}</span>
+                                    <span class="mos">{{ post.created_at|date:"M" }}</span>
+                                    <span class="yr">{{ post.created_at|date:"Y" }}</span>
+                                </div>
+                            </a>
+                            <div class="text bg-white p-4">
+                                <h3 class="heading"><a href="#">{{ post.title }}</a></h3>
+                                <p>{{ post.content }}</p>
+                                <div class="d-flex align-items-center mt-4">
+
+                                    <p class="ml-auto mb-0">
+                                        <a href="#" class="mr-2">{{ post.author }}</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            {% include 'inc/pagination.html' %}
+        </div>
+    </section>
+
+
+ -->
+
+
+
+
+    <!-- loader -->
+    <section class="main-section paddind" id="Portfolio">
+        <!--main-section-start-->
+          <!-- <a class="btn btn-outline-secondary" style="position: absolute; float: right; margin: 0;">Регистрация</a> -->
+          <!-- <a class="btn btn-outline-secondary" style="position: absolute; float: right; margin: 0;">Вход</a> -->
+          <h2>Магазин</h2>
+          <h6>У нас большой асортимент товаров.</h6>
+          <div class="portfolioFilter">
+            <ul class="Portfolio-nav wow fadeIn delay-02s">
+              <li><a href="#" data-filter="*" class="current">Все</a></li>
+              <li><a href="#" data-filter=".branding">Смартфоны</a></li>
+              <li><a href="#" data-filter=".webdesign">Ноутбуки</a></li>
+              <li><a href="#" data-filter=".printdesign">Компьютеры</a></li>
+              <li><a href="#" data-filter=".photography">Аксессуары</a></li>
+            </ul>
+          </div>
+      
+        </div>
+        <div class="portfolioContainer wow fadeInUp delay-04s">
+          {% for post in pr %}
+            {% if post.availability %}
+             {% if post.group == "mobile" %}
+                <div class=" Portfolio-box branding"> <!-- Смартфоны -->
+                  <a href="img/Portfolio-pic3.jpg"><img src="{{ post.img.url }}" alt=""></a>
+                  <h3>{{ post.name }}</h3>
+                  <p>Цена: {{ post.price }} ₽</p>
+                </div>
+             {% elif post.group == "pc" %}
+              <div class=" Portfolio-box printdesign"> <!-- Компьютеры -->
+                <a href="img/Portfolio-pic1.jpg"><img src="{{ post.img.url }}" alt=""></a>
+                <h3>{{ post.name }}</h3>
+                <p>Цена: {{ post.price }} ₽</p>
+              </div>
+             {% elif post.group == "notebook" %}
+                <div class="Portfolio-box webdesign"> <!-- Ноутбуки -->
+                  <a href="img/Portfolio-pic2.jpg"><img src="{{ post.img.url }}" alt=""></a>
+                  <h3>{{ post.name }}</h3>
+                  <p>Цена: {{ post.price }} ₽</p>
+                </div>
+             {% else %}
+                <div class=" Portfolio-box photography"> <!-- Аксессуары -->
+                  <a href="img/Portfolio-pic4.jpg"><img src="{{ post.img.url }}" alt=""></a>
+                  <h3>{{ post.name }}</h3>
+                  <p>Цена: {{ post.price }} ₽</p>
+                </div>
+              {% endif %}
+            {% endif %}
+          {% endfor %}
+        </div>
+      </section>
+      
+
+
+{% endblock %}

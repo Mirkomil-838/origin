@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+<!-- <section class="home" id="home" style="width: 100%; height: 100%;"> -->
+  <div class="container1">
+    <video src="{% static 'images/gif.mp4'%}" class="slider" autoplay loop muted controls></video>
+
+    <ul>
+        <li onclick="videoslider('static/images/gif-2.mp4')"><video src="{% static 'images/gif-2.mp4'%}"> </video></li>
+        <li onclick="videoslider( 'static/images/gif-3.mp4')"><video src="{% static 'images/gif-3.mp4'%}"></video></li>
+        <li onclick="videoslider('static/images/gif-4.mp4')"><video src="{% static 'images/gif-4.mp4'%}" style="width: 100px; height: 100px;" ></video></li>
+        <!-- <li onclick="videoslider( 'static/imagegif.mp4')"><video src="{% static 'imagegif.mp4'%}"></video></li> -->
+        <!-- <li onclick="videoslider('./video1.mp4')"><video src="./video1.mp4"></video></li> -->
+    </ul>
+</div><img src="static\images\FON2.jpg" style="width: 100px; height: 100px; " alt="">
+</section>  
+<script>
+
+  
+function videoslider(links){
+      document.querySelector(".slider").src = links;
+  }
+
+
+</script>
+         
+
+               
+              
+
+
+    
+  
+
+  <!-- loader -->
+  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
+{% endblock %}
